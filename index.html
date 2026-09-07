@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leaflet Preview</title>
-    <meta charset="utf-8"/>
+    <title>Ruang Terbuka Hijau Probolinggo</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet"
           href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H"
-          crossorigin=""/>
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin="">
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossorigin=""></script>
 
     <style>
-        body {
+        html, body {
             margin: 0;
             padding: 0;
+            width: 100%;
+            height: 100%;
         }
 
-        html, body, #map {
+        #map {
             width: 100%;
             height: 100%;
         }
@@ -32,13 +34,11 @@
 <div id="map"></div>
 
 <script>
-    var map = L.map('map', {
-        attributionControl: false
-    }).setView([-7.85201, 113.286], 13);
 
-    L.control.attribution({
-        prefix: false
-    }).addTo(map);
+    var map = L.map('map').setView(
+        [-7.85201, 113.286],
+        13
+    );
 
     L.tileLayer('./tiles/{z}/{x}/{y}.png', {
         minZoom: 11,
@@ -46,6 +46,7 @@
         tms: false,
         attribution: 'Created by QGIS'
     }).addTo(map);
+
 </script>
 
 </body>
